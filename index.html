@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/ProyectoAPIMovie/css/styles.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/ProyectoAPIMovie/assets/logo-movie-app.jpg"
+    />
+    <title>Movie Web App</title>
+  </head>
+  <body>
+    <video autoplay muted loop class="video-background">
+      <source
+        src="https://cdn.pixabay.com/video/2023/07/31/174070-850361335_tiny.mp4"
+        type="video/mp4"
+      />
+      Tu navegador no soporta el elemento de video.
+    </video>
+    <header>
+      <!-- Logo -->
+      <img
+        src="/ProyectoAPIMovie/assets/logo.jpg"
+        alt="Logo de la empresa"
+        class="logo"
+      />
+
+      <!-- Nombre de la aplicación -->
+      <h1 class="app-name">MOVIE WEB APP</h1>
+
+      <!-- Formulario de búsqueda -->
+      <form id="form">
+        <input type="text" placeholder="Buscar" id="search" class="search" />
+      </form>
+    </header>
+
+    <div id="intro">
+      <h1>¡Bienvenido al Cine en Casa con Movie API!</h1>
+      <p>
+        Aquí podrás encontrar más de 15 géneros de películas disponibles.
+        Explora un mundo de películas increíbles. ¡Tu próxima película favorita
+        está a un clic de distancia!
+      </p>
+    </div>
+    <!-- Contenedor para las etiquetas de género -->
+    <div id="tags"></div>
+
+    <!-- Overlay para mostrar contenido adicional como videos -->
+    <div id="myNav" class="overlay">
+      <!-- Botón para cerrar la navegación superpuesta -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+
+      <!-- Contenido de la navegación superpuesta -->
+      <div class="overlay-content" id="overlay-content"></div>
+
+      <!-- Flechas para navegar entre videos en el overlay -->
+      <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow"
+        >&#8656;</a
+      >
+      <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow"
+        >&#8658;</a
+      >
+    </div>
+
+    <!-- Contenedor principal para mostrar las películas -->
+    <main id="main"></main>
+
+    <!-- Controles de paginación -->
+    <div class="pagination">
+      <div class="page" id="prev">Página Anterior</div>
+      <div class="current" id="current">1</div>
+      <div class="page" id="next">Página Siguiente</div>
+    </div>
+    <script src="/ProyectoAPIMovie/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                12,
+                35,
+                18
+            ],
+            "id": 1022789,
+            "original_language": "en",
+            "original_title": "Inside Out 2",
+            "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+            "popularity": 5696.178,
+            "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+            "release_date": "2024-06-11",
+            "title": "Inside Out 2",
+            "video": false,
+            "vote_average": 7.694,
+            "vote_count": 1843
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fDmci71SMkfZM8RnCuXJVDPaSdE.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                35,
+                28
+            ],
+            "id": 519182,
+            "original_language": "en",
+            "original_title": "Despicable Me 4",
+            "overview": "Gru and Lucy and their girls — Margo, Edith and Agnes — welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Meanwhile, Gru faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
+            "popularity": 4379.882,
+            "poster_path": "/3w84hCFJATpiCO5g8hpdWVPBbmq.jpg",
+            "release_date": "2024-06-20",
+            "title": "Despicable Me 4",
+            "video": false,
+            "vote_average": 7.467,
+            "vote_count": 288
+        }
+    ],
+    "total_pages": 45132,
+    "total_results": 902638
+}

@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* Variables CSS para los colores */
+:root {
+  --primary-color: #f9b208;
+  --secondary-color: #f98404;
+  --tertiary-color: #ffdbc5;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.app-name {
+  margin: 0;
+  color: white;
+}
+
+/* Estilo para el cuerpo del documento */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+/* Estilo para el encabezado */
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+}
+
+.logo {
+  width: 200px;
+}
+
+.app-name {
+  margin-left: 20px;
+  color: var(--tertiary-color);
+}
+
+#intro {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+}
+
+/* Estilo para el campo de búsqueda */
+.search {
+  background-color: transparent;
+  border: 3px solid var(--primary-color);
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 50px;
+  font-size: 22px;
+  color: #fff;
+  font-family: inherit;
+  width: 300px;
+  cursor: pointer;
+  background-image: url("/ProyectoAPIMovie/assets/buscar.png");
+  background-size: 30px 25px;
+  background-position: 15px;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
+
+/* Estilo cuando el campo de búsqueda está enfocado */
+.search:focus {
+  outline: 0;
+  background-color: var(--primary-color);
+}
+
+/* Estilo para el texto del placeholder del campo de búsqueda */
+.search::placeholder {
+  color: rgba(0, 0, 0, 0.801);
+  font-weight: 600;
+}
+
+/* Estilo para el contenedor principal */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilo para cada tarjeta de película */
+.movie {
+  width: 300px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo para las imágenes de las películas */
+.movie img {
+  width: 100%;
+}
+
+/* Estilo para la información de las películas */
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Estilo para los títulos de las películas */
+.movie-info h3 {
+  margin-top: 0;
+}
+
+/* Estilo para la puntuación de las películas */
+.movie-info span {
+  background-color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Colores de la puntuación según el valor */
+.movie-info span.green {
+  color: rgb(31, 7, 163);
+}
+
+.movie-info span.orange {
+  color: #ff4375;
+}
+
+.movie-info span.red {
+  color: #ffb400;
+}
+
+/* Estilo para la descripción de la película */
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+
+/* Mostrar la descripción al pasar el ratón sobre la tarjeta */
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+/* Estilo para el contenedor de etiquetas de género */
+#tags {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+/* Estilo para las etiquetas de género */
+.tag {
+  color: white;
+  padding: 10px 20px;
+  background-color: #fc5404;
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Estilo para las etiquetas destacadas */
+.tag.highlight {
+  background-color: rgb(236, 0, 0);
+}
+
+/* Estilo para el texto sin resultados */
+.no-results {
+  color: white;
+}
+
+/* Estilo para la paginación */
+.pagination {
+  display: flex;
+  margin: 10px 30px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Estilo para cada página de la paginación */
+.page {
+  padding: 10px 20px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 5px;
+}
+
+.page:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Estilo para las páginas deshabilitadas */
+.page.disabled {
+  cursor: not-allowed;
+  color: grey;
+}
+
+/* Estilo para la página actual */
+.current {
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 5px solid orange;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Estilo para el botón "ver más" */
+.know-more {
+  background-color: #ff4375;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* Estilo para la superposición (fondo) */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* Posición del contenido dentro de la superposición */
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Los enlaces de navegación dentro de la superposición */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Al pasar el mouse sobre los enlaces de navegación, cambia su color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Posición del botón de cierre (esquina superior derecha) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* Cuando la altura de la pantalla es menor a 450 píxeles, cambia el tamaño de fuente de los enlaces y vuelve a posicionar el botón de cierre, para que no se superpongan */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* Ocultar el contenido incrustado */
+.embed.hide {
+  display: none;
+}
+
+/* Mostrar el contenido incrustado */
+.embed.show {
+  display: inline-block;
+}
+
+/* Estilo para las flechas de navegación */
+.arrow {
+  position: absolute;
+  font-size: 40px;
+}
+
+/* Flecha izquierda */
+.arrow.left-arrow {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+/* Flecha derecha */
+.arrow.right-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+}
+
+/* Estilo para los puntos de navegación */
+.dots {
+  margin-top: 30px;
+}
+
+/* Estilo para cada punto */
+.dots .dot {
+  padding: 5px 15px;
+  border-radius: 50%;
+  border: 5px solid var(--secondary-color);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+/* Estilo para el punto activo */
+.dots .dot.active {
+  border-color: orange;
+}
